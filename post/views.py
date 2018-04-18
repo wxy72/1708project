@@ -13,7 +13,7 @@ def create_post(requst):
         post = Post.objects.create(title=title, content=content)
         return redirect('/read/?post_id=%s' % post.id)
 
-    return render(request, 'create_post.html', {})
+    return render(request, 'create.html', {})
 
 
 def post_list(requst):
