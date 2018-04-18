@@ -6,7 +6,7 @@ from post.models import Post
 
 
 # Create your views here.
-def create_post(requst):
+def create_post(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         content = request.POST.get('content')
