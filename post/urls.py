@@ -1,5 +1,7 @@
 from django.conf.urls import url
 
+from post import views
+
 urlpatterns = [
  	url(r'^list/$', post_view.post_list),
     url(r'^create/$', post_view.create_post),
