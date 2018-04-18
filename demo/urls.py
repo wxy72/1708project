@@ -17,5 +17,9 @@ from django.conf.urls import url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    # url(r'^admin/', admin.site.urls),
+    url(r'^post/list/', post_view.post_list),
+    url(r'^post/create/', post_view.create_post),
+    url(r'^post/edit/', post_view.edit_post),
+    url(r'^post/read/', post_view.read_post),
 ]
