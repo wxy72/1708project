@@ -11,20 +11,20 @@ def create_post(request):
         title = request.POST.get('title')
         content = request.POST.get('content')
         post = Post.objects.create(title=title, content=content)
-        return redirect('/read/?post_id=%s' % post.id)
+        return redirect('/post/read/?post_id=%s' % post.id)
 
     return render(request, 'create.html', {})
 
 
-def post_list(requst):
+def post_list(request):
     pass
 
 
-def edit_post(requst):
+def edit_post(request):
     pass
 
 
-def read_post(requst):
+def read_post(request):
     post_id = int(request.GET.get('post_id'))
     post = Post.objects.get(id='post_id')
     return render(request, 'read_post.html', {'post': post})
