@@ -26,3 +26,7 @@ def info(request):
 		user = User.objects.get(id=uid)
 		return render(request,'info.html',{'user':user})
 	return render(request,'login.html',{})
+
+def loginout(request):
+	request.session.flush()
+	return render(request,'register.html')
