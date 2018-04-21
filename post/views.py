@@ -21,7 +21,17 @@ def post_list(request):
 
 
 def edit_post(request):
-    pass
+    if request.method == 'POST':
+        post_id = request.POST.get('post_id')
+        post = Post.objects.get(id=post_id)
+        post.title = request.POST.get('title')
+        post.content = request.POST.get('content')
+        post.save()
+        return render(request,'read_post.html',{'post':post})
+    else:
+        post_id = request.GET.get('post_id')
+        post = Post.objects.get(id=post_id)
+    return render(request, 'edit_post.html', {'post': post})
 
 
 def read_post(request):
