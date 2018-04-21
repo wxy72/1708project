@@ -26,5 +26,5 @@ def edit_post(request):
 
 def read_post(request):
     post_id = int(request.GET.get('post_id'))
-    post = Post.objects.get(id='post_id')
+    post = Post.objects.get(id=post_id)
     return render(request, 'read_post.html', {'post': post})
